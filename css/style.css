@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+:root{
+    --color-primary:#444CF7;
+    --color-title:#000;
+    --align-title:left;
+    --pading-container:100px 0;
+    --width-container: 90%;
+    --max-whidth-container: 1200px;
+    --color-btn: #444CF7;
+    --text-btn:#fff;
+    --padding-btn: 20px 35px;
+    --height-shape: 18cm;
+}
+
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image: radial-gradient(#444CF7 0.7000000000000001px, transparent 0.70);
+    background-size: 28px 28px;
+    background-position: 0 0,14px 14px;
+}
+
+.container{
+    width: var(--width-container);
+    max-width: var(--max-whidth-container);
+    padding: var(--pading-container);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hero{
+    height: 100vh;
+    min-width: 500px;
+    position:relative;
+    --padding-container: 0;
+}
+
+.hero::after{
+    content: "";
+    display:block;
+    position:absolute;
+    height: var(--height-shape);
+    width: 100%;
+    bottom: 0;
+    left:0;
+    background: #fff;
+    z-index: -1;
+    clip-path: polygon(0% 100% ,100% 100%, 100% 0);
+}
+.hero_container{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 3fr 2fr;
+    place-items: center;
+    gap: 20px;
+}
+.hero_title{
+    font-size: 4rem;
+}
+.hero_copy{
+    font-size: 1.2rem;
+    margin: 25px 0;
+}
+
+.hero_cta{
+    display: inline-block;
+    background: var(--color-btn);
+    color: #fff;
+    padding: var(--padding-btn);
+    text-align: center;
+    text-decoration: none;
+}
+
+.hero_img{
+    width: 95%;
+}
+
+/* Main */
+
+.main{
+    background: rgb(255, 255, 255);
+}
+
+.title{
+    font-size: 2.5rem;
+    text-align: var(--align-title);
+    color:var(--color-title);
+}
+
+.title--border::after{
+    content: "";
+    display: block;
+    width: 100px;
+    margin-top: 20px;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+.cta{
+    display: inline-block;
+    background: var(--color-btn);
+    color: var(--text-btn);
+    padding: var(--padding-btn);
+    text-align: center;
+    text-decoration: none;
+}
+/* Instructor */
+
+.instructor{
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    --padding-container: 30px 0 60px;
+}
+
+.instructor_container{
+    text-align: center;
+    --padding-container: 60px 0 60px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.instructor_name{
+    margin: 20px 0;
+}
+
+.instructor_tag{
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.instructor_paragrapth{
+    text-align: left;
+    line-height: 1.5;
+    font-style: italic;
+    color: #615a5a;
+}
+
+.instructor_img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+/* about */
+
+.about{
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    place-items: center;
+}
+
+.about_course{
+    width: 90%;
+}
+
+.about__paragrapht{
+    margin: 20px 0;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.about_picture{
+    text-align: center;
+
+}
+
+.about_img{
+    width: 95%;
+}
+
+/* card */
+
+.card{
+    background: #f2f2f2;
+}
+.card_copy{
+    margin-top: 20px;
+}
+
+.card_container{
+    width: 69%;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 20px;
+    grid-template-areas: 
+    ".      card1  .    "
+    "card2  card1  card3"
+    "card2  card4  card3"
+    ".      card4  .    ";
+    
+}
+.card_item{
+    padding: 20px;
+    background: #fff;
+    border-top: 5px solid #05815c;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_img{
+    background: #0dc28c;
+    margin-top: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_title{
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+.card_paragrapht{
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.card_item:nth-last-of-type(1){
+    grid-area: card1;
+}
+
+.card_item:nth-last-of-type(2){
+    grid-area: card2;
+}
+
+.card_item:nth-last-of-type(3){
+    grid-area: card3;
+}
+
+.card_item:nth-last-of-type(4){
+    grid-area: card4;
+}
+
+/* course*/
+
+.course{
+    --color-title: #fff;
+    --color-btn: #fff;
+    --text-btn: #444cf7;
+    color: var(--color-title);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    /*align-items: center;*/
+    /*height: 500px;*/
+}
+
+.course_about{
+    z-index: 100;
+    align-self: center;
+    width: 97%;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    background: var(--color-primary);
+    grid-column: 1/4;
+    grid-row: 2/-2;
+}
+.course_picture{
+    margin:0;
+    grid-column: 3/-1;
+    grid-row: 2/-2;
+}
+.course_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.course_picture--right{
+    grid-column: 1/4;
+}
+
+.course_about--lefth{
+    grid-column: 3/-1;
+}
+
+/*footer*/
+
+.footer{
+    position: relative;
+    --padding-container: 160px 0 50px ;
+}
+
+.footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 50% 15%);
+}
+
+.footer_contac{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    place-items: center;
+    margin-bottom: 30px;
+}
+
+.footer_copy{
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+.footer_link{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+.footer_social{
+    display: flex;
+    padding-top: 30px;
+    flex-wrap: wrap;
+}
+
+.footer_icon{
+    width: 30px;
+}
+
+.footer_picture{
+    margin: 50px;
+}
+
+.footer_img{
+    width: 100%;
+}
+
+.footer_copyrigth{
+    padding-top: 30px;
+    border-top: 2px solid #918484;
+    text-align: center;
+}
+.footer_copyrigth::after{
+    content: "alp.350402311cbt2tecamac.edu.mx";
+}
